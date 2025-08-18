@@ -8,8 +8,6 @@
     <meta content="" name="keywords" />
     <meta content="" name="description" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.css">
-
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,20 +15,6 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap"
       rel="stylesheet"
     />
-
-      <!-- Add FontAwesome for icons -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-
-
-    <!-- Add FontAwesome for icons -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-
 
     <!-- Icon Font Stylesheet -->
     <link
@@ -485,116 +469,124 @@
       }
     }
 
-    .modal {
-      background-color: rgba(0, 0, 0, 0.4);
-    }
-    .modal-header {
-      border-bottom: 1px solid #505050;
-      padding: 12px 16px 6px 16px;
-      .modal-title {
-        color: #ccc;
 
-        margin: 0;
-      }
-      .close {
-        font-size: 32px;
-        opacity: 1;
-        color: #ccc;
-        text-shadow: none;
-        outline: none;
-      }
-    }
-    .modal-content {
-      border-radius: 0;
-      border: 0;
-      background-color: #323232;
-    }
-    .img-responsive {
-      width: 100%;
-    }
-    button.btn-play {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      padding: 0;
-      margin: 0;
-      margin-left: -15px;
-      border: 0;
-      border-radius: 0;
-      outline: 0 !important;
-      width: 100%;
-      background-color: transparent;
-      color: rgba(245, 245, 245, 0.8);
-      &:hover,
-      &:active,
-      &:visited,
-      &:focus {
-        color: rgba(255, 255, 255, 1);
-      }
-      .glyphicon {
-        padding: 0;
-        margin: 0;
-        color: inherit;
-        background-color: inherit;
-        font-size: 64px;
-      }
-    }
-    @media (min-width: 992px) and (max-width: 1199px) {
-      button.btn-play {
-        .glyphicon {
-          font-size: 56px;
-        }
-      }
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-      button.btn-play {
-        .glyphicon {
-          font-size: 46px;
-        }
-      }
-    }
-    @media (max-width: 767px) {
-      a.video {
-        display: block;
-      }
-      button.btn-play {
-        .glyphicon {
-          font-size: 56px;
-        }
-      }
-    }
+    
 
-    .play-icon {
-  width: 3rem; /* Adjust size for responsiveness */
-  height: 3rem; /* Ensure circular shape */
-  font-size: 1.5rem; /* Icon size relative to button */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #007bff; /* Primary color */
-  color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
-  transition: transform 0.2s ease; /* Smooth hover effect */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
 }
 
-.play-icon:hover {
-  transform: scale(1.1); /* Slightly enlarge on hover */
+.blog-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-  .play-icon {
-    width: 2.5rem; /* Smaller size on small screens */
-    height: 2.5rem;
-    font-size: 1.2rem;
-  }
+.blog {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1 0 calc(33.33% - 20px);
+    display: flex;
+    flex-direction: column;
 }
 
-@media (max-width: 576px) {
-  .play-icon {
-    width: 2rem; /* Adjust further for very small screens */
-    height: 2rem;
-    font-size: 1rem;
-  }
+.blog-image {
+    position: relative;
+}
+
+.blog-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.blog-image img:hover {
+    transform: scale(1.05);
+}
+
+.blog-image .date {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.blog-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.blog-content p {
+    flex-grow: 1;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.blog-content a {
+    align-self: flex-start;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.blog-content a:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-container p {
+    color: #bbb;
+}
+
+.footer-container .social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-container .social-links a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-container .social-links a:hover {
+    color: #0056b3;
 }
 
   </style>
@@ -630,11 +622,11 @@
                 >
               </div>
               <div class="ps-3">
-                <a href="mailto:example@gmail.com" class="text-white small"
+                <!-- <a href="mailto:example@gmail.com" class="text-white small"
                   ><i class="fas fa-envelope text-white me-2"></i>
                   officialneuronix.ai@gmail.com
 </a
-                >
+                > -->
               </div>
             </div>
           </div>
@@ -686,14 +678,13 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <!-- Align all items to the right including "Get a Quote" button -->
             <div class="navbar-nav ms-auto align-items-center">
-              <a href="index.html" class="nav-item nav-link active">Home</a>
-              <a href="index.html" class="nav-item nav-link">About</a>
-              <a href="index.html" class="nav-item nav-link">Services</a>
+              <a href="#home" class="nav-item nav-link active">Home</a>
+              <a href="#about" class="nav-item nav-link">About</a>
+              <a href="#service" class="nav-item nav-link">Services</a>
+              <a href="blogs.html" class="nav-item nav-link">Blogs</a>
               <a href="learn.html" class="nav-item nav-link">Learn</a>
-                            <a href="carrer.html" class="nav-item nav-link">Blog</a>
-
               <!-- <a href="carrer.html" class="nav-item nav-link">Careers</a> -->
-              <a href="index.html" class="nav-item nav-link">Contact</a>
+              <a href="#contact" class="nav-item nav-link">Contact</a>
               <!-- Get a Quote Button -->
               <div class="nav-btn px-3">
                 <a
@@ -802,497 +793,96 @@
     </div>
     <!-- Modal Search End -->
 
-<!-- YouTube Section Starts -->
-<section class="container my-5">
-    <div class="mb-5">
-    
-    <h3 class="text-center text-primary mb-4" id="youtube-gallery">
-      🎥 Gallery of iNeuronix AI
-    </h3>
-  
-    <!-- Full-Length Videos Section -->
-    <!-- <h4 class="mb-3" style="color: #408fd4;">Full-Length Videos</h4> -->
-    <div class="row g-4">
-
-<!-- 
-      <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://i9.ytimg.com/vi_webp/oVmHJvErnf8/mqdefault.webp?v=680d1c6b&sqp=COy9scIG&rs=AOn4CLDYweQm3Rxe8c9m0Wf0i5A6FTUfKw"
-              alt="Composio Tutorial: Connect AI Agents to 250+ Tools in Minutes!"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://www.youtube.com/watch?v=oVmHJvErnf8"
-              target="_blank"
-              class="btn btn-primary position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play video Install Composio"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Connect AI Agents to 250+ Tools in Minutes!</h5>
-            <p class="card-text text-muted">
-              Connect AI Agents to 250+ Tools in Minutes — No APIs, No Hassle! 🤖🚀 | Composio Tutorial
-            </p>
-            <span class="badge bg-success">Full Video</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://i9.ytimg.com/vi_webp/OQ5x-JA6d-8/mqdefault.webp?v=67de5ffb&sqp=COy9scIG&rs=AOn4CLDmZlb5lzAl-glCGNBLDb4eBz93MA"
-              alt="Replit AI Tutorial: Create a Complete App in Under 10 Minutes"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://www.youtube.com/watch?v=OQ5x-JA6d-8"
-              target="_blank"
-              class="btn btn-primary position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play video Install Composio"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Replit AI Agent—for FREE and with zero coding required! </h5>
-            <p class="card-text text-muted">
-              Welcome to iNeuronix.ai! Agentic Ai | Replit AI Agent Video
-            </p>
-            <span class="badge bg-success">Full Video</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://i9.ytimg.com/vi/htcWaJr61pw/mqdefault.jpg?v=67d2924c&sqp=CJjAscIG&rs=AOn4CLBoKQ-MDG9Qg3Lvncwd8kKdcg2b0Q"
-              alt="How to Load and Use Google Gemma 3 in Google Colab"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://www.youtube.com/watch?v=htcWaJr61pw"
-              target="_blank"
-              class="btn btn-primary position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play video Install Composio"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Load & Use Google Gemma 3 LLM| Build a Code Explainer AI!</h5>
-            <p class="card-text text-muted">
-              Load & Use Google Gemma 3 | Build a Code Explainer AI!
-
-            </p>
-            <span class="badge bg-success">Full Video</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://i9.ytimg.com/vi_webp/scKhOyr04kE/mqdefault.webp?v=67cd506b&sqp=CJjAscIG&rs=AOn4CLBEDsOCghboFWBrTBUJpSz0p7iTZw"
-              alt="SmolAgents + Hugging Face: Build AI Agents in Minutes on Google Colab!"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://www.youtube.com/watch?v=scKhOyr04kE"
-              target="_blank"
-              class="btn btn-primary position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play video Install Composio"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Build AI Agents in Minutes with SmolAgents + Hugging Face</h5>
-            <p class="card-text text-muted">
-              Build AI Agents in Minutes
-
-            </p>
-            <span class="badge bg-success">Full Video</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://i9.ytimg.com/vi/fXUT87PzKKs/mqdefault.jpg?v=67cc6f10&sqp=CMTCscIG&rs=AOn4CLBaN1BHdmmSuEJmICMJ-DmabgAtng"
-              alt="Deploy Any Machine Learning App on Hugging Face Spaces in Just 5 Minutes!"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://www.youtube.com/watch?v=fXUT87PzKKs"
-              target="_blank"
-              class="btn btn-primary position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play video Install Composio"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Deploy Any Machine Learning App on Hugging Face Spaces</h5>
-            <p class="card-text text-muted">
-              Deploy any application in Minutes
-
-            </p>
-            <span class="badge bg-success">Full Video</span>
-          </div>
-        </div>
-      </div> -->
-
 
     
-
-
-<!-- <h1>Class 5: Module</h1> -->
-
-
-
-
-
-      <!-- gened ai ending -->
-
-
-      
-            <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://i9.ytimg.com/vi_webp/3Qwu8zym58Y/mqdefault.webp?v=686653b9&sqp=CJjGjcUG&rs=AOn4CLAghqiu10RNQ8Ju7qVNYJm6uOmhFg"
-              alt="GitMCP Tutorial: Connect GitHub to Any IDE Without Commands!"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://www.youtube.com/watch?v=3Qwu8zym58Y&feature=youtu.be"
-              target="_blank"
-              class="btn btn-primary position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play video Connect GitHub to Any IDE Without Commands!"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Welcome to iNeuronix.ai, hands-on tutorials in AI</h5>
-            <p class="card-text text-muted">
-              Connect GitHub to Any IDE Without Commands!
-            </p>
-            <span class="badge bg-success">Full Video</span>
-          </div>
-        </div>
-      </div> 
-
-
-
-
-            <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://i9.ytimg.com/vi_webp/oVmHJvErnf8/mqdefault.webp?v=680d1c6b&sqp=CJjGjcUG&rs=AOn4CLAw95-do9HnMdBhF57HZNwCL-sy9g"
-              alt="Composio Tutorial: Connect AI Agents to 250+ Tools in Minutes!"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://www.youtube.com/watch?v=oVmHJvErnf8&feature=youtu.be"
-              target="_blank"
-              class="btn btn-primary position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play video Connect AI Agents to 250+ Tools in Minutes!"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Connect AI Agents to 250+ Tools in Minutes</h5>
-            <p class="card-text text-muted">
-              Connect AI Agents to 250+ Tools in Minutes — No APIs, No Hassle!
-            </p>
-            <span class="badge bg-success">Full Video</span>
-          </div>
-        </div>
-      </div> 
-
-
-
-
-
-
-      <!-- Video 1 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://img.youtube.com/vi/5AJchjvlkFM/mqdefault.jpg"
-              alt="Install Bolt.DIY Locally on Windows | Integrate LLMs: DeepSeek, OpenAI, Hugging Face & More"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://youtu.be/5AJchjvlkFM"
-              target="_blank"
-              class="btn btn-primary position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play video Install Bolt.DIY Locally on Windows"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Install Bolt.DIY Locally on Windows</h5>
-            <p class="card-text text-muted">
-              Learn to integrate LLMs like DeepSeek, OpenAI, Hugging Face & More.
-            </p>
-            <span class="badge bg-success">Full Video</span>
-          </div>
-        </div>
-      </div> 
-
-
-  
-
-      <!-- Video 1 -->
-
-      <!-- Video 2 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://img.youtube.com/vi/Y2lNra4HDlc/mqdefault.jpg"
-              alt="How to Load DeepSeek-Vision’s Janus Model in Google Colab | Step-by-Step Guide"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://youtu.be/Y2lNra4HDlc"
-              target="_blank"
-              class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play video How to Load DeepSeek-Vision’s Janus Model"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Load DeepSeek-Vision’s Janus Model</h5>
-            <p class="card-text text-muted">Step-by-step guide for Google Colab using Python Programming.</p>
-            <span class="badge bg-success">Full Video</span>
-          </div>
+    
+    
+    <!-- blogs section starts -->
+    <div class="container my-5">
+  <div class="row g-4">
+    <!-- Blog 1 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="img/blog_section_1.png" class="card-img-top" alt="Data Science for Beginners Part 1">
+        <div class="card-body">
+          <h5 class="card-title">Data Science for Beginners – Part 1</h5>
+          <p class="card-text">A beginner-friendly introduction to Data Science, covering the foundations, key concepts, and why it matters in today’s data-driven world.</p>
+          <a href="https://vaishnavspeaks.wordpress.com/2020/12/28/data-science-for-beginners-part-1/" target="_blank" class="btn btn-primary btn-sm">Read More</a>
         </div>
       </div>
+    </div>
 
-  
-  
-  <!-- Video Card 4 -->
-  <div class="col-md-4 col-sm-6">
-    <div class="card shadow-sm border-0">
-      <div class="position-relative">
-        <img
-          src="https://img.youtube.com/vi/NCKCXyfZfzA/mqdefault.jpg"
-          alt="Open Source vs Closed Source Models, LLMs, and Software: Key Differences and When to Use Them"
-          class="card-img-top img-fluid rounded"
-        />
-        <a
-          href="https://youtu.be/NCKCXyfZfzA"
-          target="_blank"
-          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-          aria-label="Play video Open Source vs Closed Source Models"
-        >
-          <i class="fas fa-play"></i>
-        </a>
+    <!-- Blog 2 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="https://vaishnavspeaks.wordpress.com/wp-content/uploads/2025/08/ds-and-roi.png" class="card-img-top" alt="Why Businesses Hesitate to Invest in Data Science">
+        <div class="card-body">
+          <h5 class="card-title">Why Businesses Hesitate to Invest in Data Science</h5>
+          <p class="card-text">Exploring the ROI dilemma in data science adoption and how organizations can redefine the narrative for long-term value creation.</p>
+          <a href="https://vaishnavspeaks.wordpress.com/2025/08/02/why-businesses-hesitate-to-invest-in-data-science-and-how-to-redefine-the-roi-narrative/" target="_blank" class="btn btn-primary btn-sm">Read More</a>
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">Open Source Models vs Closed Source Models</h5>
-        <p class="card-text text-muted">Key differences and when to use them.</p>
-        <span class="badge bg-success">Full Video</span>
+    </div>
+
+    <!-- Blog 3 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="https://vaishnavspeaks.wordpress.com/wp-content/uploads/2025/07/genaivsds.png" class="card-img-top" alt="Data Science vs GenAI">
+        <div class="card-body">
+          <h5 class="card-title">Data Science vs GenAI – What Every Student Needs to Know</h5>
+          <p class="card-text">A comparison between traditional data science and generative AI, helping students understand the opportunities in 2025 and beyond.</p>
+          <a href="https://vaishnavspeaks.wordpress.com/2025/07/26/data-science-vs-genai-heres-what-every-student-needs-to-know-in-2025/" target="_blank" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog 4 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="https://vaishnavspeaks.wordpress.com/wp-content/uploads/2025/06/fraud.png" class="card-img-top" alt="Fighting Onboarding Fraud in Fintech">
+        <div class="card-body">
+          <h5 class="card-title">Fighting Onboarding Fraud in Fintech with Image Deduplication</h5>
+          <p class="card-text">How image deduplication can prevent fraudulent user onboarding in fintech, improving trust and compliance.</p>
+          <a href="https://vaishnavspeaks.wordpress.com/2025/06/01/fighting-onboarding-fraud-in-fintech-with-image-deduplication/" target="_blank" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog 5 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="img/blog_ruralareas.png" class="card-img-top" alt="Data Science & GenAI in Rural Education">
+        <div class="card-body">
+          <h5 class="card-title">How Data Science and GenAI Can Transform Education in Rural India</h5>
+          <p class="card-text">Practical ways AI and data science can bridge the education gap and empower rural India with equal learning opportunities.</p>
+          <a href="https://vaishnavspeaks.wordpress.com/2025/05/17/how-data-science-and-genai-can-transform-education-in-rural-india/" target="_blank" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog 6 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="https://vaishnavspeaks.wordpress.com/wp-content/uploads/2025/06/genai.png" class="card-img-top" alt="Getting Started with GenAI">
+        <div class="card-body">
+          <h5 class="card-title">Getting Started with GenAI – 5 Initial Projects</h5>
+          <p class="card-text">Five beginner-friendly GenAI projects that organizations can adopt to boost automation and productivity right away.</p>
+          <a href="https://vaishnavspeaks.wordpress.com/2025/06/14/getting-started-with-genai-5-initial-projects-to-drive-automation-and-productivity-in-your-organization/" target="_blank" class="btn btn-primary btn-sm">Read More</a>
+        </div>
       </div>
     </div>
   </div>
-  
-  <!-- Video Card 5 -->
-  <div class="col-md-4 col-sm-6">
-    <div class="card shadow-sm border-0">
-      <div class="position-relative">
-        <img
-          src="https://img.youtube.com/vi/DJSUKn8GJug/mqdefault.jpg"
-          alt="Automate Image Orientation Correction with AI: A Step-by-Step Guide"
-          class="card-img-top img-fluid rounded"
-        />
-        <a
-          href="https://youtu.be/DJSUKn8GJug"
-          target="_blank"
-          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-          aria-label="Play video Automate Image Orientation Correction"
-        >
-          <i class="fas fa-play"></i>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Automate Image Orientation Correction</h5>
-        <p class="card-text text-muted">A step-by-step guide using AI.</p>
-        <span class="badge bg-success">Full Video</span>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Video Card 6 -->
-  <div class="col-md-4 col-sm-6">
-    <div class="card shadow-sm border-0">
-      <div class="position-relative">
-        <img
-          src="https://img.youtube.com/vi/vr5sCW8g6pM/mqdefault.jpg"
-          alt="How to Select & Load the Best Hugging Face Model | Real-World Examples & Step-by-Step Guide"
-          class="card-img-top img-fluid rounded"
-        />
-        <a
-          href="https://youtu.be/vr5sCW8g6pM"
-          target="_blank"
-          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-          aria-label="Play video Select & Load the Best Hugging Face Model"
-        >
-          <i class="fas fa-play"></i>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Select & Load the Best Hugging Face Model</h5>
-        <p class="card-text text-muted">Real-world examples and step-by-step guide.</p>
-        <span class="badge bg-success">Full Video</span>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Video Card 7 -->
-  <div class="col-md-4 col-sm-6">
-    <div class="card shadow-sm border-0">
-      <div class="position-relative">
-        <img
-          src="https://img.youtube.com/vi/jHq0szbqL9Y/mqdefault.jpg"
-          alt="How to Create & Use Hugging Face Access Tokens | Fine-Grained, Read, Write Explained | Generative AI"
-          class="card-img-top img-fluid rounded"
-        />
-        <a
-          href="https://youtu.be/jHq0szbqL9Y"
-          target="_blank"
-          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-          aria-label="Play video Create & Use Hugging Face Access Tokens"
-        >
-          <i class="fas fa-play"></i>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Create & Use Hugging Face Access Tokens</h5>
-        <p class="card-text text-muted">Fine-grained, read, and write explained.</p>
-        <span class="badge bg-success">Full Video</span>
-      </div>
-    </div>
-  </div>
-  
-  
-      <!-- Repeat for other full-length videos -->
-      <!-- Add cards for all other videos following the same structure -->
-    </div>
-  
-    <!-- Shorts Section -->
-    <!-- <h4 class="mt-5 mb-3" style="color: #408fd4;">YouTube Shorts</h4>
-    <div class="row g-4"> -->
+</div>
 
-          
-          
-<!-- 
+    
+    <!-- blogs section ends -->
 
-      <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://img.youtube.com/vi/7bcs5Qo1Xew/mqdefault.jpg"
-              alt="OpenAI o3-mini Struggles Without Vision! DeepSeek R1 SHOCKS Everyone!"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://youtube.com/shorts/7bcs5Qo1Xew"
-              target="_blank"
-              class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play short OpenAI o3-mini Struggles Without Vision"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">OpenAI o3-mini Struggles!</h5>
-            <p class="card-text text-muted">DeepSeek R1 shocks everyone!</p>
-            <span class="badge bg-warning">Short</span>
-          </div>
-        </div>
-      </div>
+    <br>
+    <br>
+    <br>
 
-      <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm border-0">
-          <div class="position-relative">
-            <img
-              src="https://i9.ytimg.com/vi_webp/NE2jdpsn-ww/mq2.webp?sqp=CMTCscIG-oaymwEoCMACELQB8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBlKGUwDw==&rs=AOn4CLAfsP-piE5lTNtzd49vTDIz3RYETw"
-              alt="Turn GitHub into VS Code in 1 Second! 😱🔥#shorts"
-              class="card-img-top img-fluid rounded"
-            />
-            <a
-              href="https://www.youtube.com/shorts/NE2jdpsn-ww"
-              target="_blank"
-              class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-              aria-label="Play short OpenAI o3-mini Struggles Without Vision"
-            >
-              <i class="fas fa-play"></i>
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Turn GitHub into VS Code in 1 Second!</h5>
-            <p class="card-text text-muted">Devtrick</p>
-            <span class="badge bg-warning">Short</span>
-          </div>
-        </div>
-      </div>
-   -->
-     
-  <!-- Short 5 -->
-  <!-- <div class="col-md-4 col-sm-6">
-    <div class="card shadow-sm border-0">
-      <div class="position-relative">
-        <img
-          src="https://img.youtube.com/vi/EMslLvAOVHE/mqdefault.jpg"
-          alt="Unlock AI with iNeuronix.ai - Expert Tips Coming Soon! #ai #largelanguagemodels #coding"
-          class="card-img-top img-fluid rounded"
-        />
-        <a
-          href="https://youtube.com/shorts/EMslLvAOVHE"
-          target="_blank"
-          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
-          aria-label="Play short Unlock AI with iNeuronix.ai"
-        >
-          <i class="fas fa-play"></i>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Unlock AI with iNeuronix.ai</h5>
-        <p class="card-text text-muted">#ai #largelanguagemodels #coding</p>
-        <span class="badge bg-warning">Short</span>
-      </div>
-    </div>
-  </div>
-</div> -->
-      <!-- Repeat for other shorts -->
-      <!-- Add cards for all other shorts following the same structure -->
-    </div>
-  </section>
-  <!-- YouTube Section Ends -->
-  
+   
 
-  <!-- Optional: Include a grid system or additional CSS framework if needed -->
-  
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
       <div class="container py-5">
@@ -1425,25 +1015,10 @@
     </div>
     <!-- Copyright End -->
 
-    <script>
-      $(document).delegate(
-        '*[data-toggle="lightbox"]',
-        "click",
-        function (event) {
-          event.preventDefault();
-          $(this).ekkoLightbox();
-        }
-      );
-    </script>
-
     <!-- Back to Top -->
-    <a
-      href="#"
-      class="btn btn-lg-square rounded-circle back-to-top contact-sendbtn"
+    <a href="#" class="btn btn-lg-square rounded-circle back-to-top contact-sendbtn"
       ><i class="fa fa-arrow-up"></i
     ></a>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
